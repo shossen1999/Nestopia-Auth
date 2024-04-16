@@ -1,0 +1,80 @@
+[
+    {
+      "id": 1,
+      "segment_name": "Single-family homes",
+      "estate_title": "Spacious Family Home",
+      "image": "https://i.ibb.co/YZmdzYR/img3.png",
+      "description": "A beautiful single-family home with ample space for a growing family.",
+      "price": "$500,000",
+      "status": "sale",
+      "area": "3000 sq ft",
+      "location": "Suburbia Heights",
+      "facilities": ["4 bedrooms", "3 bathrooms", "Backyard"],
+      "view_property_button": "https://example.com/property/1"
+    },
+    {
+      "id": 2,
+      "segment_name": "Townhouses",
+      "estate_title": "Modern Townhouse",
+      "image": "https://i.ibb.co/YZmdzYR/img3.png",
+      "description": "A contemporary townhouse featuring sleek design and urban convenience.",
+      "price": "$600,000",
+      "status": "sale",
+      "area": "2000 sq ft",
+      "location": "Metroville",
+      "facilities": ["3 bedrooms", "2.5 bathrooms", "Rooftop terrace"],
+      "view_property_button": "https://example.com/property/2"
+    },
+    {
+      "id": 3,
+      "segment_name": "Apartments",
+      "estate_title": "Luxury City Apartment",
+      "image": "https://i.ibb.co/YZmdzYR/img3.png",
+      "description": "An upscale apartment in a prime location offering luxury living amenities.",
+      "price": "$3,000/month",
+      "status": "rent",
+      "area": "1800 sq ft",
+      "location": "Downtown District",
+      "facilities": ["2 bedrooms", "2 bathrooms", "Swimming pool"],
+      "view_property_button": "https://example.com/property/3"
+    },
+    {
+      "id": 4,
+      "segment_name": "Student Housing",
+      "estate_title": "Student Residence",
+      "image": "https://i.ibb.co/YZmdzYR/img3.png",
+      "description": "A comfortable student residence with convenient amenities for academic success.",
+      "price": "$900/month",
+      "status": "rent",
+      "area": "160 sq ft (per room)",
+      "location": "University Campus",
+      "facilities": ["Individual rooms", "Study area", "Common kitchen"],
+      "view_property_button": "https://example.com/property/4"
+    },
+    {
+      "id": 5,
+      "segment_name": "Senior Living Communities",
+      "estate_title": "Retirement Villa",
+      "image": "https://i.ibb.co/YZmdzYR/img3.png",
+      "description": "An elegant retirement villa designed for comfort and tranquility in later years.",
+      "price": "$700,000",
+      "status": "sale",
+      "area": "2500 sq ft",
+      "location": "Elderly Haven",
+      "facilities": ["2 bedrooms", "2 bathrooms", "Community center"],
+      "view_property_button": "https://example.com/property/5"
+    },
+    {
+      "id": 6,
+      "segment_name": "Vacation Rentals",
+      "estate_title": "Beachfront Condo",
+      "image": "https://i.ibb.co/YZmdzYR/img3.png",
+      "description": "A luxurious beachfront condo offering stunning ocean views and resort-style amenities.",
+      "price": "$250/night",
+      "status": "rent",
+      "area": "1200 sq ft",
+      "location": "Sunny Shores",
+      "facilities": ["1 bedroom", "1 bathroom", "Private balcony"],
+      "view_property_button": "https://example.com/property/6"
+    }
+  ]
