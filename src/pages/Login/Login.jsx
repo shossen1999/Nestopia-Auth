@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar/Navbar";
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
@@ -13,13 +13,24 @@ const Login = () => {
         handleSubmit,
         formState: { errors }
     } = useForm();
+       
 
+     // navigation systems
+     const navigate = useNavigate();
+     const location = useLocation();
+     console.log(location);
+     const from = location?.state || "/"; 
     const onSubmit = async (data) => {
         const { email, password } = data;
         
         try {
-            await signInUser(email, password);
-            console.log("Login successful");
+            await signInUser(email, password)
+            .then((result) => {
+                if (result.user) {
+                    navigate(from);
+                }
+            });
+            
         } catch (error) {
             console.error("Login failed:", error.message);
             // Show error toast

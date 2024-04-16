@@ -85,10 +85,10 @@ const Navbar = () => {
                 {
                     user ?
                         <div className="flex gap-3 animate_animated animate_fadeInRight">
-                            <div className="tooltip tooltip-hover tooltip-bottom" data-tip={user.displayName}>
+                            <div className="tooltip tooltip-hover tooltip-bottom" data-tip={user?.displayName||'user name not found'}>
                                 <div className="w-10 h-10 rounded-full border border-black">
 
-                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL} className="h-full w-full mx-auto rounded-full" />
+                                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL || "https://i.ibb.co/z4XBBcL/soheb.jpg"} className="h-full w-full mx-auto rounded-full" />
                                 </div>
 
                             </div>

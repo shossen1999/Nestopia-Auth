@@ -5,6 +5,7 @@ import EstateDetails from "../pages/EstateDetails/EstateDetails";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
 import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -19,7 +20,7 @@ const router = createBrowserRouter([
         {
           path:"/estate/:id",
           
-          element:<EstateDetails></EstateDetails>
+          element:<PrivateRoute><EstateDetails></EstateDetails></PrivateRoute>
         },
         {
           path:"/login",

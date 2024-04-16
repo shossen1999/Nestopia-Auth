@@ -12,7 +12,7 @@ const Register = () => {
     const [registerError, setRegisterError] = useState('');
     const [success, setSuccess] = useState('');
     const [showPassword, setShowPassword] = useState(false);
-    const navigate=useNavigate();
+    const navigate = useNavigate();
     const {
         register,
         handleSubmit,
