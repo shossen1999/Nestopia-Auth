@@ -2,7 +2,7 @@
 import useAuth from "../../hooks/useAuth";
 import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
-import Navbar from "../shared/Navbar/Navbar";
+
 import { Helmet } from "react-helmet";
 const UpdateProfile = () => {
     const { user } = useAuth();
@@ -40,7 +40,7 @@ const UpdateProfile = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
+          
             <h2>Hi update</h2>
             {/* <h2>{user.displayName}</h2> */}
             <h3>{user?.displayName}</h3>

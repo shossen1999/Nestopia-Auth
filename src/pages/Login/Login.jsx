@@ -1,5 +1,5 @@
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import Navbar from "../shared/Navbar/Navbar";
+
 import { useForm } from "react-hook-form";
 import useAuth from "../../hooks/useAuth";
 import { ToastContainer, toast } from 'react-toastify';
@@ -40,7 +40,7 @@ const Login = () => {
 
     return (
         <div>
-            <Navbar />
+           
             <div>
             <ToastContainer />
                 <h3 className="text-3xl text-center">Please Login</h3>

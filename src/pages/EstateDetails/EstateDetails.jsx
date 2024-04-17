@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Navbar from "../shared/Navbar/Navbar";
+
+import { ImHome } from "react-icons/im";
+import { MdCarRental, MdSell } from "react-icons/md";
+import { FaArtstation, FaChartArea, FaLocationDot } from "react-icons/fa6";
 
 const EstateDetails = () => {
     const { id } = useParams();
     const [estate, setEstate] = useState(null);
 
-  
+
     useEffect(() => {
         const fetchEstateData = async () => {
             try {
@@ -20,27 +23,69 @@ const EstateDetails = () => {
         };
 
         fetchEstateData();
-    }, [id]); 
+    }, [id]);
+    
 
     return (
         <div>
-            <Navbar />
-            {estate && ( 
-                <div>
-                    <h2 className="text-3xl">{estate.estate_title}</h2>
-                    <img src={estate.image} alt={estate.estate_title} />
-                    <p>{estate.description}</p>
-                    <p>Price: {estate.price}</p>
-                    <p>Status: {estate.status}</p>
-                    <p>Area: {estate.area}</p>
-                    <p>Location: {estate.location}</p>
-                    <h4>Facilities:</h4>
-                    <ul>
-                        {estate.facilities.map((facility, index) => (
-                            <li key={index}>{facility}</li>
-                        ))}
-                    </ul>
-                   <Link to="/"><button className="btn btn-secondary">Go Back to Home</button></Link>
+
+            {estate && (
+                <div className="flex flex-col md:flex-row lg:flex-row gap-10">
+
+                    <div className="md:w-[40%] lg:w-[40%]">
+                        <img className="p-5 rounded-[20px] h-full" src={estate.image} alt={estate.estate_title} />
+                    </div>
+                    <div className="p-10 md:p-5 lg:p-5  flex flex-col space-y-2 ">
+                        <h2 className="text-3xl font-bold">{estate.estate_title}</h2>
+                        <div className="flex gap-2 items-center text-[20px] ">
+                            <ImHome />
+                            <p>{estate.segment_name}</p>
+                        </div>
+                        <p className="text-[18px] "><span className="font-bold text-[16px]">Description: </span>{estate.description}</p>
+                        <p><span className="font-bold text-[16px]">Price: </span> {estate.price}</p>
+                        <p>
+                            <span className="font-bold">Status: </span>
+                            <span style={{ display: 'inline-flex', alignItems: 'center', gap: '5px' }}>
+                                {estate.status === 'Rent' ? (
+                                    <><MdCarRental /> Rent</>
+                                ) : (
+                                    <><MdSell /> Sale</>
+                                )}
+                            </span>
+                        </p>
+
+                        <div className="flex gap-2">
+                            <div className="flex items-center gap-2">
+                                <FaChartArea />
+                                <p className="font-bold">Area: </p>
+                            </div>
+                            <p>{estate.area}</p>
+                        </div>
+
+                        <div className="flex gap-2 ">
+                            <div className="flex items-center gap-2">
+                                <FaLocationDot />
+                                <p className="font-bold">Location: </p>
+                            </div>
+                            <p>{estate.location}</p>
+                        </div>
+                      
+                        <div>
+                            <div className="flex items-center gap-2">
+                                <FaArtstation />
+                                <h4>Facilities:</h4>
+                            </div>
+                            
+                            <div className="flex flex-col space-y-2">
+                                    {estate.facilities.map((facility, index) => (
+                                        <li key={index}>{facility}</li>
+                                    ))}
+                               
+                            </div>
+
+                        </div>
+                        <Link to="/"><button className="btn btn-primary">Go Back to Home</button></Link>
+                    </div>
                 </div>
             )}
         </div>

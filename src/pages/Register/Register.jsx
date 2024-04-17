@@ -1,5 +1,5 @@
 import { Link, useNavigate } from "react-router-dom";
-import Navbar from "../shared/Navbar/Navbar";
+
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { useForm } from "react-hook-form";
@@ -63,7 +63,7 @@ const Register = () => {
 
     return (
         <div>
-            <Navbar></Navbar>
+           
 
             <div>
                 <ToastContainer />
