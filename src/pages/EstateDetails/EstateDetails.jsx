@@ -4,6 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import { ImHome } from "react-icons/im";
 import { MdCarRental, MdSell } from "react-icons/md";
 import { FaArtstation, FaChartArea, FaLocationDot } from "react-icons/fa6";
+import { Helmet } from "react-helmet";
 
 const EstateDetails = () => {
     const { id } = useParams();
@@ -28,6 +29,9 @@ const EstateDetails = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>Estate Details</title>
+            </Helmet>
 
             {estate && (
                 <div className="flex flex-col md:flex-row lg:flex-row gap-10">
