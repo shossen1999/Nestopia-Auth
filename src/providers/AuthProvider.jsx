@@ -1,4 +1,4 @@
-import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { GithubAuthProvider, GoogleAuthProvider, createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut, updateProfile } from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import app from "../firebase/firebase.config";
 
@@ -9,32 +9,42 @@ const auth = getAuth(app);
 const googleProvider = new GoogleAuthProvider();
 const githubProvider = new GithubAuthProvider();
 
-const AuthProvider = ({children}) => {
-    const [user, setUser]=useState(null);
-    const [loading, setLoading]=useState(true);
+const AuthProvider = ({ children }) => {
+    const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
+    const [disName, setDisName] = useState('')
+    const [photoLink, setPhotoLink] = useState('')
     console.log(user);
     // create User
-    const createUser =(email,password) =>{
+    const createUser = (email, password) => {
         setLoading(true);
         return createUserWithEmailAndPassword(auth, email, password)
     }
     // signInUser
-    const signInUser = (email, password) =>{
+    const signInUser = (email, password) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password)
     }
 
+    const updateUser = (name, photo) => {
+
+
+        return updateProfile(auth.currentUser, {
+            displayName: name, photoURL: photo
+        })
+    }
+
     // sign out
-    const logout =()=>{
-       
+    const logout = () => {
+
         setUser(null);
         return signOut(auth);
-       
+
     }
 
     // google Login
 
-    const googleLogin =()=>{
+    const googleLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, googleProvider)
 
@@ -42,7 +52,7 @@ const AuthProvider = ({children}) => {
 
     // github Login
 
-    const githubLogin =()=>{
+    const githubLogin = () => {
         setLoading(true);
         return signInWithPopup(auth, githubProvider)
 
@@ -50,23 +60,36 @@ const AuthProvider = ({children}) => {
     // Observer
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
-          if (user) {
-            setUser(user)
-            
-          }
-          setLoading(false);
+            if (user) {
+                setUser(user)
+
+            }
+            setLoading(false);
         });
         return () => unsubscribe();
-      }, []);
-    const authInfo={
-         user,
-         createUser,
-         signInUser,
-         googleLogin,
-         githubLogin,
-         logout,
-         loading
-         
+    }, []);
+
+    const handleName=(name)=>{
+        return setDisName(name)
+      }
+      const handleImage =(photo)=>{
+          return setPhotoLink(photo)
+      }
+
+    const authInfo = {
+        user,
+        createUser,
+        signInUser,
+        googleLogin,
+        githubLogin,
+        logout,
+        loading,
+        handleName,
+        disName,
+        photoLink,
+        handleImage,
+        updateUser
+
     }
     return (
         <AuthContext.Provider value={authInfo}>

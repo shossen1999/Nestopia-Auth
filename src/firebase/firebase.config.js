@@ -4,13 +4,14 @@ import { initializeApp } from "firebase/app";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyBc8BN470w7xQK-9iIkg5oWalHL4EMMMVE",
-  authDomain: "nestopia-auth.firebaseapp.com",
-  projectId: "nestopia-auth",
-  storageBucket: "nestopia-auth.appspot.com",
-  messagingSenderId: "367598589860",
-  appId: "1:367598589860:web:f28f7cccae9823acff9331"
+  apiKey: import.meta.env.VITE_APIKEY,
+  authDomain: import.meta.env.VITE_AUTHDOMAIN ,
+  projectId: import.meta.env.VITE_PROJECTID ,
+  storageBucket: import.meta.env.VITE_STORAGEBUCKET,
+  messagingSenderId: import.meta.env.VITE_MESSAGINGSENDERID ,
+  appId: import.meta.env.VITE_APPID ,
 };
 
 // Initialize Firebase

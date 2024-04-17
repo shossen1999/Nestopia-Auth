@@ -4,8 +4,14 @@ import { useForm } from "react-hook-form";
 import { updateProfile } from "firebase/auth";
 
 import { Helmet } from "react-helmet";
+import { useNavigate } from "react-router-dom";
+
 const UpdateProfile = () => {
     const { user } = useAuth();
+    const navigate = useNavigate()
+
+
+
     console.log(user);
 
     const {
@@ -30,6 +36,8 @@ const UpdateProfile = () => {
         })
             .then(() => {
                 reset();
+                navigate('/updateProfile')
+
 
             })
             .catch()
@@ -40,15 +48,12 @@ const UpdateProfile = () => {
 
     return (
         <div>
-          
-            <h2>Hi update</h2>
-            {/* <h2>{user.displayName}</h2> */}
-            <h3>{user?.displayName}</h3>
-            <img src={user?.photoURL} alt="" />
+
+            
             <Helmet>
                 <title>Update Profile </title>
             </Helmet>
-
+            <h1 className="text-center text-2xl font-bold">Update Profile</h1>
             <form onSubmit={handleSubmit(onSubmit)} className="card-body lg:w-1/2 mx-auto">
                 <div className="form-control">
                     <label className="label">
@@ -56,11 +61,25 @@ const UpdateProfile = () => {
                     </label>
                     <input type="text"
                         name="name"
-                        placeholder="name"
+                        placeholder={user.displayName}
                         className="input input-bordered"
                         {...register("fullName", { required: true })}
                     />
                     {errors.fullName && <span className="text-red-700">This field is required</span>}
+                </div>
+
+                <div className="form-control">
+                    <label className="label">
+                        <span className="label-text">Email</span>
+                    </label>
+                    <input
+                        type="email"
+                        name="email"
+                        value={user.email}
+                        className="input input-bordered"
+                        disabled
+                    />
+
                 </div>
                 <div className="form-control">
                     <label className="label">
@@ -68,7 +87,7 @@ const UpdateProfile = () => {
                     </label>
                     <input type="text"
                         name="photo"
-                        placeholder="Photo URL"
+                        placeholder={user.photoURL}
                         className="input input-bordered"
                         {...register("image")}
                     />

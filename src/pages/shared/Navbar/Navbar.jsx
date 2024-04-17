@@ -3,7 +3,9 @@ import useAuth from "../../../hooks/useAuth";
 
 
 const Navbar = () => {
-    const { logout, user } = useAuth();
+    const { logout, user,disName,photoLink } = useAuth();
+    
+
     console.log(user);
 
     const navigate = useNavigate();
@@ -88,7 +90,7 @@ const Navbar = () => {
                             <div className="tooltip tooltip-hover tooltip-bottom" data-tip={user?.displayName||'user name not found'}>
                                 <div className="w-10 h-10 rounded-full border border-black">
 
-                                    <img alt="Tailwind CSS Navbar component" src={user?.photoURL || "https://i.ibb.co/z4XBBcL/soheb.jpg"} className="h-full w-full mx-auto rounded-full" />
+                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL ? user.photoURL : photoLink}   className="h-full w-full mx-auto rounded-full" />
                                 </div>
 
                             </div>
