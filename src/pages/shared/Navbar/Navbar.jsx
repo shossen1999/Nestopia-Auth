@@ -42,16 +42,7 @@ const Navbar = () => {
                                 isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
                             }
                             to="/updateProfile">Update Profile</NavLink></li>
-                        <li><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/login">Login</NavLink></li>
-                        <li><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/register">Register</NavLink></li>
+                     
 
 
                     </ul>
@@ -74,12 +65,8 @@ const Navbar = () => {
                         className={({ isActive }) =>
                             isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
                         }
-                        to="/login">Login</NavLink></li>
-                    <li><NavLink
-                        className={({ isActive }) =>
-                            isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                        }
-                        to="/register">Register</NavLink></li>
+                        to="/userProfile">User Profile</NavLink></li>
+                    
 
                 </ul>
             </div>
