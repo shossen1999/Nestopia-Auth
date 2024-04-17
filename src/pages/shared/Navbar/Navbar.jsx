@@ -3,19 +3,19 @@ import useAuth from "../../../hooks/useAuth";
 
 
 const Navbar = () => {
-    const { logout, user,disName,photoLink } = useAuth();
-    
+    const { logout, user, disName, photoLink } = useAuth();
+
 
     console.log(user);
 
     const navigate = useNavigate();
 
-    const handleLogout = ()=>{
+    const handleLogout = () => {
         logout()
-        .then(()=>{
-            navigate("/")
-        })
-        
+            .then(() => {
+                navigate("/")
+            })
+
     }
     // const navLinks = <>
     //     <li><NavLink to="/">Home</NavLink></li>
@@ -42,7 +42,19 @@ const Navbar = () => {
                                 isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
                             }
                             to="/updateProfile">Update Profile</NavLink></li>
-                     
+
+                        <li><NavLink
+                            className={({ isActive }) =>
+                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                            }
+                            to="/userProfile">User Profile</NavLink></li>
+
+                        <li><NavLink
+                            className={({ isActive }) =>
+                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                            }
+                            to="/about">About Us</NavLink></li>
+
 
 
                     </ul>
@@ -66,7 +78,13 @@ const Navbar = () => {
                             isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
                         }
                         to="/userProfile">User Profile</NavLink></li>
-                    
+
+                    <li><NavLink
+                        className={({ isActive }) =>
+                            isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                        }
+                        to="/about">About Us</NavLink></li>
+
 
                 </ul>
             </div>
@@ -74,10 +92,10 @@ const Navbar = () => {
                 {
                     user ?
                         <div className="flex gap-3 animate_animated animate_fadeInRight">
-                            <div className="tooltip tooltip-hover tooltip-bottom" data-tip={user?.displayName||'user name not found'}>
+                            <div className="tooltip tooltip-hover tooltip-bottom" data-tip={user?.displayName || 'user name not found'}>
                                 <div className="w-10 h-10 rounded-full border border-black">
 
-                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL ? user.photoURL : photoLink}   className="h-full w-full mx-auto rounded-full" />
+                                    <img alt="Tailwind CSS Navbar component" src={user.photoURL ? user.photoURL : photoLink} className="h-full w-full mx-auto rounded-full" />
                                 </div>
 
                             </div>

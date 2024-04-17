@@ -8,6 +8,7 @@ import UpdateProfile from "../pages/UpdateProfile/UpdateProfile";
 import PrivateRoute from "./PrivateRoute";
 import ErrorPage from "../pages/ErrorPage/ErrorPage";
 import UserProfile from "../pages/UserProfile/UserProfile";
+import About from "../pages/About/About";
 
 const router = createBrowserRouter([
     {
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
         {
           path:"/userProfile",
           element:<PrivateRoute><UserProfile></UserProfile></PrivateRoute>
+        },
+        {
+          path:"/about",
+          element:<PrivateRoute><About></About></PrivateRoute>
         }
       ]
     },
