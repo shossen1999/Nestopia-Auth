@@ -14,7 +14,9 @@ const Home = () => {
             <Helmet>
                 <title> Home Page</title>
             </Helmet>
+            <div className="">
             <SwipperSlider></SwipperSlider>
+            </div>
             {/* <Slider></Slider> */}
             <div className="text-center mt-10 mb-10">
                 <h1 className="mb-5 text-[#030712] font-bold text-3xl">Our Categories</h1>
