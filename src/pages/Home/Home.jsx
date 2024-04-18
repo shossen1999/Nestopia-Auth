@@ -1,8 +1,9 @@
 import { Helmet } from "react-helmet";
 
 import EstatesCard from "./EstatesCard";
-import Slider from "./Slider";
+// import Slider from "./Slider";
 import { useLoaderData } from "react-router-dom";
+import SwipperSlider from "./SwipperSlider";
 
 
 
@@ -13,11 +14,11 @@ const Home = () => {
             <Helmet>
                 <title> Home Page</title>
             </Helmet>
-
-            <Slider></Slider>
+            <SwipperSlider></SwipperSlider>
+            {/* <Slider></Slider> */}
             <div className="text-center mt-10 mb-10">
                 <h1 className="mb-5 text-[#030712] font-bold text-3xl">Our Categories</h1>
-                <p className="w-[736px] mx-auto">
+                <p className="md:w-[736px] lg:w-[736px] w-[500px] mx-auto">
                     Nestopia Real Estate Company, we specialize in turning houses into homes, and dreams into reality. Explore our listings and let us help you find your perfect nest
                 </p>
             </div>

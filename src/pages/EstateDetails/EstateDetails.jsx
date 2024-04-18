@@ -5,8 +5,12 @@ import { ImHome } from "react-icons/im";
 import { MdCarRental, MdSell } from "react-icons/md";
 import { FaArtstation, FaChartArea, FaLocationDot } from "react-icons/fa6";
 import { Helmet } from "react-helmet";
-
+import Aos from 'aos'
+import 'aos/dist/aos.css'
 const EstateDetails = () => {
+    useEffect(()=>{
+        Aos.init({duration:2000,disable: 'mobile'})
+      },[])
     const { id } = useParams();
     const [estate, setEstate] = useState(null);
 
@@ -36,12 +40,12 @@ const EstateDetails = () => {
             {estate && (
                 <div className="flex flex-col md:flex-row lg:flex-row gap-10">
 
-                    <div className="md:w-[40%] lg:w-[40%]">
-                        <img className="p-5 rounded-[20px] h-full" src={estate.image} alt={estate.estate_title} />
+                    <div className="md:w-[40%] lg:w-[40%]" >
+                        <img className="p-5 rounded-[20px] h-full" data-aos="right"  src={estate.image} alt={estate.estate_title} />
                     </div>
-                    <div className="p-10 md:p-5 lg:p-5  flex flex-col space-y-2 ">
+                    <div className="p-10 md:p-5 lg:p-5  flex flex-col space-y-2 " data-aos="fade-left">
                         <h2 className="text-3xl font-bold">{estate.estate_title}</h2>
-                        <div className="flex gap-2 items-center text-[20px] ">
+                        <div className="flex gap-2 items-center text-[20px] " >
                             <ImHome />
                             <p>{estate.segment_name}</p>
                         </div>

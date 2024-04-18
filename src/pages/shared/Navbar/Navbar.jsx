@@ -1,7 +1,7 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 
-
+import { FaBuilding } from "react-icons/fa";
 const Navbar = () => {
     const { logout, user, disName, photoLink } = useAuth();
 
@@ -59,7 +59,7 @@ const Navbar = () => {
 
                     </ul>
                 </div>
-                <Link to='/' className="btn btn-ghost font-bold normal-case text-3xl">Nestopia</Link>
+                <Link to='/' className="btn btn-ghost font-bold normal-case text-3xl"><FaBuilding></FaBuilding><span className="text-[#1DD100] "> Nestopia</span> </Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">

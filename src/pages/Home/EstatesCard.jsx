@@ -9,7 +9,7 @@ const EstatesCard = ({ estate }) => {
 
 
     return (
-        <div className="card  bg-base-100 shadow-xl">
+        <div className="card  bg-base-100 shadow-xl mx-10 md:mx-5 lg:mx-5 border border-gray-200">
             <figure className="px-10 pt-10">
                 <img  src={image} className="rounded-2xl w-full h-[180px]" />
             </figure>
