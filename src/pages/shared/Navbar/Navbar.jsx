@@ -1,12 +1,12 @@
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import useAuth from "../../../hooks/useAuth";
 import { FaBuilding } from "react-icons/fa";
-import { useState } from "react"; 
+import { useState } from "react";
 
 const Navbar = () => {
     const { logout, user, disName, photoLink } = useAuth();
-    const [menuOpen, setMenuOpen] = useState(false); 
-    const navigate = useNavigate(); 
+    const [menuOpen, setMenuOpen] = useState(false);
+    const navigate = useNavigate();
 
     const toggleMenu = () => {
         setMenuOpen(!menuOpen);
@@ -16,18 +16,18 @@ const Navbar = () => {
         setMenuOpen(false);
     };
 
-   
+
     const handleLogout = () => {
         logout()
-        .then(() => {
-            navigate("/"); 
-            closeMenu(); 
-        });
+            .then(() => {
+                navigate("/");
+                closeMenu();
+            });
     };
 
-    
+
     const handleRouteClick = () => {
-        closeMenu(); 
+        closeMenu();
     };
 
     return (
@@ -39,27 +39,27 @@ const Navbar = () => {
                     </div>
                     {menuOpen && (
                         <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                            
+
                             <li onClick={handleRouteClick}><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/">Home</NavLink></li>
-                        <li onClick={handleRouteClick}><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/updateProfile">Update Profile</NavLink></li>
-                        <li onClick={handleRouteClick}><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/userProfile">User Profile</NavLink></li>
-                        <li onClick={handleRouteClick}><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/about">About Us</NavLink></li>
+                                className={({ isActive }) =>
+                                    isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                                }
+                                to="/">Home</NavLink></li>
+                            <li onClick={handleRouteClick}><NavLink
+                                className={({ isActive }) =>
+                                    isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                                }
+                                to="/updateProfile">Update Profile</NavLink></li>
+                            <li onClick={handleRouteClick}><NavLink
+                                className={({ isActive }) =>
+                                    isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                                }
+                                to="/userProfile">User Profile</NavLink></li>
+                            <li onClick={handleRouteClick}><NavLink
+                                className={({ isActive }) =>
+                                    isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                                }
+                                to="/about">About Us</NavLink></li>
                         </ul>
                     )}
                 </div>
@@ -67,26 +67,28 @@ const Navbar = () => {
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                <li><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/">Home</NavLink></li>
-                        <li><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/updateProfile">Update Profile</NavLink></li>
-                        <li><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/userProfile">User Profile</NavLink></li>
-                        <li><NavLink
-                            className={({ isActive }) =>
-                                isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
-                            }
-                            to="/about">About Us</NavLink></li>
+                   
+                    <li><NavLink
+                        className={({ isActive }) =>
+                            isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                        }
+                        to="/">Home</NavLink></li>
+                    <li><NavLink
+                        className={({ isActive }) =>
+                            isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                        }
+                        to="/updateProfile">Update Profile</NavLink></li>
+                    <li><NavLink
+                        className={({ isActive }) =>
+                            isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                        }
+                        to="/userProfile">User Profile</NavLink></li>
+                    <li><NavLink
+                        className={({ isActive }) =>
+                            isActive ? 'text-[#23BE0A] font-semibold text-[18px]' : 'font-semibold text-[18px] '
+                        }
+                        to="/about">About Us</NavLink></li>
+
                 </ul>
             </div>
             <div className="navbar-end">
