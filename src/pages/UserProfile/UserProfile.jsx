@@ -11,13 +11,13 @@ const UserProfile = () => {
             <Helmet>
                 <title>User Profile</title>
             </Helmet>
-            <div className="max-w-lg w-full mx-auto p-8 bg-white rounded-lg shadow-lg">
+            <div className="max-w-lg my-5 md:my-1 lg:my-1 w-full mx-auto p-8 bg-white rounded-lg shadow-lg">
                 <h1 className="text-3xl font-bold text-center mb-4 text-gray-800">User Profile</h1>
                 <div className="flex justify-center mb-6">
-                    <img
-                        className="w-40 h-40 rounded-full border-4 border-blue-500 shadow-md"
-                        src={user.photoURL}
-                        alt="Profile Picture"
+                    <img  className="w-40 h-40 rounded-full border-4 border-blue-500 shadow-md"
+                        src={user.photoURL}   alt="Profile Picture"
+                       
+                      
                     />
                 </div>
                 <div className="text-center mb-6">
